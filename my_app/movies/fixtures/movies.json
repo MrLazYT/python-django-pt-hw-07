@@ -1,0 +1,52 @@
+[
+  {
+    "model": "movies.Movie",
+    "pk": 1,
+    "fields": {
+      "title": "The Shawshank Redemption",
+      "author": "Frank Darabont",
+      "genre": "Drama",
+      "year": 1994
+    }
+  },
+  {
+    "model": "movies.Movie",
+    "pk": 2,
+    "fields": {
+      "title": "The Godfather",
+      "author": "Francis Ford Coppola",
+      "genre": "Crime",
+      "year": 1972
+    }
+  },
+  {
+    "model": "movies.Movie",
+    "pk": 3,
+    "fields": {
+      "title": "The Dark Knight",
+      "author": "Christopher Nolan",
+      "genre": "Action",
+      "year": 2008
+    }
+  },
+  {
+    "model": "movies.Movie",
+    "pk": 4,
+    "fields": {
+      "title": "Pulp Fiction",
+      "author": "Quentin Tarantino",
+      "genre": "Crime",
+      "year": 1994
+    }
+  },
+  {
+    "model": "movies.Movie",
+    "pk": 5,
+    "fields": {
+      "title": "Forrest Gump",
+      "author": "Robert Zemeckis",
+      "genre": "Drama",
+      "year": 1994
+    }
+  }
+]
