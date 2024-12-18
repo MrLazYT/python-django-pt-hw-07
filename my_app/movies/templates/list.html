@@ -3,9 +3,35 @@
 {% block title %}Movies{% endblock %}
 
 {% block content %}
-    <ul>
-        {% for movie in movies %}
-            <li><a href="/movies/details/{{movie.id}}">{{ movie.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Year</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+                <tr>
+                    <th scope="row">{{ movie.id }}</th>
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.author }}</td>
+                    <td>{{ movie.genre }}</td>
+                    <td>{{ movie.year }}</td>
+                    <td>
+                        <a class="btn btn-primary" href="/details/{{ movie.id }}">
+                            <i class="bi bi-info-circle-fill"></i>
+                        </a>
+                        <a class="btn btn-danger" href="/delete/{{ movie.id }}">
+                            <i class="bi bi-trash-fill"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

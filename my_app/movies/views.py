@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from movies.models import Movie
 
@@ -12,3 +12,9 @@ def details(request, id):
     movie = Movie.objects.get(id=id)
 
     return render(request, 'details.html', {'movie': movie})
+
+def delete(request, id):
+    movie = Movie.objects.get(id=id)
+    movie.delete()
+
+    return redirect('/')
