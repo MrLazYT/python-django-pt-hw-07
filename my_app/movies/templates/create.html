@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Create{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+
+        <label for="title" class="form-label">Title</label>
+        <input required type="text" class="form-control" id="title" name="title">
+
+        <label required for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author">
+
+        <label required for="genre" class="form-label">Genre</label>
+        <input type="text" class="form-control" id="genre" name="genre">
+
+        <label required for="year" class="form-label">Year</label>
+        <input type="number" class="form-control" id="year" name="year">
+
+        <button class="btn btn-primary">Create</button>
+    </form>
+{% endblock %}
