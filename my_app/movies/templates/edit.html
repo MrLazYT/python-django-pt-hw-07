@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Create{% endblock %}
+{% block title %}Edit Movie{% endblock %}
 
 {% block content %}
     <form method="POST">
@@ -8,23 +8,23 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input required type="text" class="form-control" id="title" name="title">
+            <input required type="text" class="form-control" id="title" name="title" value="{{form.title.value}}">
         </div>
         <div class="mb-3">
             <label required for="author" class="form-label">Author</label>
-            <input type="text" class="form-control" id="author" name="author">
+            <input type="text" class="form-control" id="author" name="author" value="{{form.author.value}}">
         </div>
 
         <div class="mb-3">
             <label required for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="genre" name="genre">
+            <input type="text" class="form-control" id="genre" name="genre" value="{{form.genre.value}}">
         </div>
 
         <div class="mb-3">
             <label required for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year">
+            <input type="number" class="form-control" id="year" name="year" value="{{form.year.value}}">
         </div>
         
-        <button class="btn btn-primary">Create</button>
+        <button class="btn btn-primary">Save</button>
     </form>
 {% endblock %}
