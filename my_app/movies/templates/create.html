@@ -3,8 +3,13 @@
 {% block title %}Create{% endblock %}
 
 {% block content %}
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Poster</label>
+            <input type="file" class="form-control" id="poster" name="poster">
+        </div>
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>

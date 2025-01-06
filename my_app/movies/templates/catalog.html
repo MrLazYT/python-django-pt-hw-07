@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+        {% for movie in movies %}
+            <div class="col">
+                <div class="card">
+                    {% if movie.poster %}
+                        <img src="{{ movie.poster.url }}" class="card-img-top" alt="...">
+                    {% else %}
+                        <img src="https://admin.itsnicethat.com/images/47jF0fMUh2AijBGlnuXPLkhYETg=/51851/format-webp%7Cwidth-2880/5530f2345c3e3c6776009210.png" class="card-img-top" alt="...">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <p class="card-title">{{ movie.title }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -11,8 +11,13 @@ def list(request):
 
     return render(request, 'list.html', {'movies': movies})
 
+def catalog(request):
+    movies = Movie.objects.all()
+
+    return render(request, 'catalog.html', {'movies': movies})
+
 def create(request):
-    form = MovieForm(request.POST)
+    form = MovieForm(request.POST, request.FILES)
 
     if (request.method == 'POST'):
         if (form.is_valid()):
@@ -31,7 +36,7 @@ def edit(request, id):
     form = EditMovieForm(instance=movie)
 
     if (request.method == 'POST'):
-        form = EditMovieForm(request.POST, instance=movie)
+        form = EditMovieForm(request.POST, request.FILES, instance=movie)
 
         if (form.is_valid()):
             form.save()
