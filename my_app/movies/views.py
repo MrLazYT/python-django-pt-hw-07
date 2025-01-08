@@ -52,6 +52,11 @@ def details(request, id):
 
 def delete(request, id):
     movie = Movie.objects.get(id=id)
-    movie.delete()
+
+    if (movie):
+        movie.delete()
+
+    if (movie.poster):
+        movie.poster.delete()
 
     return redirect('/')
