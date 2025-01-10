@@ -16,13 +16,18 @@
             <input required type="text" class="form-control" id="title" name="title">
         </div>
         <div class="mb-3">
-            <label required for="author" class="form-label">Author</label>
+            <label for="author" class="form-label">Author</label>
             <input type="text" class="form-control" id="author" name="author">
         </div>
 
         <div class="mb-3">
-            <label required for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="genre" name="genre">
+            <label for="genre" class="form-label">Genre</label>
+            <select id="genre" class="form-select">
+                <option selected disabled>Choose Genre</option>
+                {% for key, val in genres %}
+                    <option value="{{key}}">{{val}}</option>
+                {% endfor %}
+            </select>
         </div>
 
         <div class="mb-3">

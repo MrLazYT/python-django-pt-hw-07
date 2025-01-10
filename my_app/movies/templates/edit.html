@@ -16,18 +16,28 @@
             <input required type="text" class="form-control" id="title" name="title" value="{{form.title.value}}">
         </div>
         <div class="mb-3">
-            <label required for="author" class="form-label">Author</label>
-            <input type="text" class="form-control" id="author" name="author" value="{{form.author.value}}">
+            <label for="author" class="form-label">Author</label>
+            <input required type="text" class="form-control" id="author" name="author" value="{{form.author.value}}">
         </div>
 
         <div class="mb-3">
-            <label required for="genre" class="form-label">Genre</label>
-            <input type="text" class="form-control" id="genre" name="genre" value="{{form.genre.value}}">
+            <label for="genre" class="form-label">Genre</label>
+            <select class="form-select" id="genre" name="genre">
+                <option selected disabled>Choose Genre</option>
+
+                {% for key, val in genres %}
+                    <option
+                            value="{{ key }}"
+                            {% if form.genre.value == key %}selected{% endif %}>
+                        {{ val }}
+                    </option>
+                {% endfor %}
+            </select>
         </div>
 
         <div class="mb-3">
-            <label required for="year" class="form-label">Year</label>
-            <input type="number" class="form-control" id="year" name="year" value="{{form.year.value}}">
+            <label for="year" class="form-label">Year</label>
+            <input required type="number" class="form-control" id="year" name="year" value="{{form.year.value}}">
         </div>
         
         <button class="btn btn-primary">Save</button>

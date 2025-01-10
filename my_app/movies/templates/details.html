@@ -6,13 +6,17 @@
     <div class="col">
         <div class="card">
             {% if movie.poster %}
-                <img src="{{ movie.poster.url }}" class="card-img-top poster" alt="...">
+                <img src="{{ movie.poster.url }}" class="card-img-top" alt="...">
             {% else %}
                 <img src="https://admin.itsnicethat.com/images/47jF0fMUh2AijBGlnuXPLkhYETg=/51851/format-webp%7Cwidth-2880/5530f2345c3e3c6776009210.png" class="card-img-top" alt="...">
             {% endif %}
 
             <div class="card-body">
                 <p class="card-title">{{ movie.title }}</p>
+                <p class="card-text">{{ movie.description }}</p>
+                <p class="card-text">{{ movie.year }}</p>
+                <p class="card-text">{{ movie.genre }}</p>
+                <p class="card-text">{{ movie.author }}</p>
             </div>
         </div>
     </div>
