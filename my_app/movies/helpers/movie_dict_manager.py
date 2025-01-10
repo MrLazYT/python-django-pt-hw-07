@@ -8,9 +8,7 @@ class MovieDictManager:
         movie_dicts = []
 
         for movie in movies:
-            movie_dict = model_to_dict(movie)
-            if (movie_dict['genre'] in Movie.GENRES):
-                movie_dict['genre'] = Movie.GENRES[movie_dict['genre']]
+            movie_dict = self.movie_to_dict(movie)
             movie_dicts.append(movie_dict)
 
         return movie_dicts
