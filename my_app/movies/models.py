@@ -14,6 +14,14 @@ class Movie(models.Model):
         "ANI": "Animation",
         "ADV": "Adventure",
         "DOC": "Documentary",
+        "WED": "Western",
+        "MUS": "Music",
+        "SYF": "Sci-Fi",
+        "ROM": "Romance",
+        "HIS": "History",
+        "ART": "Art",
+        "POL": "Political",
+        "CRI": "Crime",
     }
 
     poster = models.ImageField(upload_to='movies/', blank=True, null=True)
