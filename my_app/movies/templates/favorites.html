@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Movies{% endblock %}
-
 {% block content %}
+    <h1>My Favorite Movies</h1>
+
+    <div class="btn-group">
+        <a href="/clear-favorites/" class="btn btn-danger">Clear All</a>
+    </div>
+
     <div class="row row-cols-1 row-cols-md-5 g-4">
         {% for movie in movies %}
             <div class="col">
@@ -18,7 +22,7 @@
                     </div>
 
                     <div class="btn-group" role="group">
-                        <a class="btn btn-primary" href="/add-to-favorites/{{ movie.id }}">Add to Favorites</a>
+                        <a class="btn btn-danger" href="/remove-from-favorites/{{ movie.id }}">Remove</a>
                     </div>
                 </div>
             </div>

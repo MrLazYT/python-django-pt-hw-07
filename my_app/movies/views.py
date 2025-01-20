@@ -5,6 +5,9 @@ from movies.helpers.movie_dict_manager import MovieDictManager
 from movies.models import Movie
 from movies.forms import MovieForm, EditMovieForm
 
+from sessions.favorites import add_to_favorites, remove_from_favorites, clear_favorites, get_favorites
+
+
 # Create your views here.
 def list(request):
     movies = Movie.objects.all()
@@ -71,3 +74,28 @@ def delete(request, id):
         movie.poster.delete()
 
     return redirect('/')
+
+def favorites(request):
+    f = get_favorites(request.session)
+    movies = Movie.objects.filter(id__in=f)
+
+    return render(request, 'favorites.html', {'movies': movies})
+
+def add_to_favorites_view(request, movie_id):
+    movie = Movie.objects.get(id=movie_id)
+
+    add_to_favorites(request.session, movie.pk)
+
+    return redirect('/')
+
+def remove_from_favorites_view(request, movie_id):
+    movie = Movie.objects.get(id=movie_id)
+
+    remove_from_favorites(request.session, movie.pk)
+
+    return redirect('/favorites/')
+
+def clear_favorites_view(request):
+    clear_favorites(request.session)
+
+    return redirect('/favorites/')
